@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Listado de Excursiones</title>
+</head>
+<body>
+	<h1>Excursiones Destacdas</h1>
+
+	<table border="2">
+		<tr>
+			<th>Descripción</th>
+			<th>Fecha</th>
+			<th>Precio</th>
+			<th>Estado</th>
+			<th>Destacado</th>
+			<th>Detalle</th>
+		</tr>
+
+		<tr th:each="excursion : ${excursiones}">
+			<td th:text="${excursion.descripcion}"></td>
+			<td
+				th:text="${#dates.format(excursion.fechaExcursion, 'dd/MM/yyyy')}"></td>
+			<td th:text="${excursion.precioUnitario}"></td>
+			<td th:text="${excursion.estado}"></td>
+			<td th:text="${excursion.destacado}"></td>
+
+			<td><a
+				th:href="@{/excursion/detalle/{id}(id=${excursion.idExcursion})}">Ver
+					detalle</a></td>
+		</tr>
+		</tbody>
+	</table>
+	<a href="/">Volver a inicio</a>
+</body>
+</html>

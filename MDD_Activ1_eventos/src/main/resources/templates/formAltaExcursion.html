@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Alta Excursion</title>
+</head>
+<body>
+
+	<h1>Aplicacion de Excursiones: Alta de Excursion</h1>
+	<form th:action="@{/excursion/alta}" method="post">
+		<p>
+			<label for="descripcion">Descripción:</label> <input type="text"
+				name="descripcion">
+		</p>
+		<p>
+			<label for="origen">Origen:</label> <input type="text" name="origen">
+		</p>
+		<p>
+			<label for="destino">Destino:</label> <input type="text"
+				name="destino">
+		</p>
+		<p>
+			<label for="fechaExcursion">Fecha de la Excursion:</label> <input
+				type="date" name="fechaExcursion">
+		</p>
+		<p>
+			<label for="duración">Duración:</label> <input type="text"
+				name="duracion">
+		</p>
+		<p>
+			<label for="estado">Estado(CREADA/CANCELADA/TERMINADA):</label> <input
+				type="text" name="estado">
+		</p>
+		<p>
+			<label for="descripcion">Destacado(S/N):</label> <input type="text"
+				name="destacado">
+		</p>
+		<p>
+			<label for="aforoMaximo">Aforo Maximo:</label> <input type="text"
+				name="aforoMaximo">
+		</p>
+		<p>
+			<label for="aforoMinimo">Aforo Minimo:</label> <input type="text"
+				name="aforoMinimo">
+		</p>
+		<p>
+			<label for="precioUnitario">Precio:</label> <input type="text"
+				name="precioUnitario">
+		</p>
+		<p>
+			<label for="fechaAlta">Fecha de Alta:</label> <input type="date"
+				name="fechaAlta">
+		</p>
+
+
+		<p>
+			<input type="submit" value="Enviar">
+		</p>
+
+
+	</form>
+</body>
+</html>

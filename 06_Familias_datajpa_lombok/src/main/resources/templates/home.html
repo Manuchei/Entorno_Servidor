@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h3>
+		Mensaje:
+		<sapn th:text="${mensaje}"></sapn>
+	</h3>
+	<p></p>
+	<h3>
+		Hola:
+		<sapn
+			th:text="${session.usuario == nul ? 'Guest' : session.usuario.username}"></sapn>
+	</h3>
+
+	<a th:href="@{/login}">inicio sesion</a>
+	<a th:href="@{/logout}">cerrar sesion</a>
+
+
+</body>
+</html>

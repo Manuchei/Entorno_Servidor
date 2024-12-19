@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Detalle de una excursion</title>
+</head>
+<body>
+	<h1>Detalle de una excursion</h1>
+
+	<label for="id">Id:</label>
+	<p th:text="${excursion.idExcursion}"></p>
+	<label for="descripcion">Descripción:</label>
+	<p th:text="${excursion.descripcion}"></p>
+	<label for="origen">Origen:</label>
+	<p th:text="${excursion.origen}"></p>
+	<label for="destino">Destino:</label>
+	<p th:text="${excursion.destino}"></p>
+	<label for="fechaExcursion">Fecha de la Excursion:</label>
+	<p th:text="${#dates.format(excursion.fechaExcursion, 'dd/MM/yyyy')}"></p>
+	<label for="duracion">Duracion:</label>
+	<p th:text="${excursion.duracion}"></p>
+	<label for="estado">Estado(CREADA/CANCELADA/TERMINADA):</label>
+	<p th:text="${excursion.estado}"></p>
+	<label for="destacado">Destacado(S/N):</label>
+	<p th:text="${excursion.destacado}"></p>
+	<label for="aforoMaximo">Aforo Maximo:</label>
+	<p th:text="${excursion.aforoMaximo}"></p>
+	<label for="adforoMinimo">Aforo Minimo:</label>
+	<p th:text="${excursion.aforoMinimo}"></p>
+	<label for="precioUnitario">Precio:</label>
+	<p th:text="${excursion.precioUnitario}"></p>
+	<label for="imagen">Imagen:</label>
+	<p th:text="${excursion.imagen}"></p>
+	<label for="fechaAlta">Fecha de Alta:</label>
+	<p th:text="${#dates.format(excursion.fechaAlta, 'dd/MM/yyyy')}"></p>
+
+	<p>
+		<a th:href="@{/}">Volver</a>
+	</p>
+</body>
+</html>

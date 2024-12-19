@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Modifica una Excursion</title>
+</head>
+<body>
+	<h1>Modificar una Excursion</h1>
+	<form
+		th:action="@{/excursion/editar/{id}(id=${excursion.idExcursion})}"
+		th:object="${excursion}" method="post">
+
+		<p>
+			<label for="descripcion">Descripción:</label> <input type="text"
+				th:field="*{descripcion}">
+		</p>
+		<p>
+			<label for="origen">Origen:</label> <input type="text"
+				th:field="*{origen}">
+		</p>
+		<p>
+			<label for="destino">Destino:</label> <input type="text"
+				th:field="*{destino}">
+		</p>
+		<p>
+			<label for="fechaExcursion">Fecha de la Excursion:</label> <input
+				type="date" th:field="*{fechaExcursion}">
+		</p>
+		<p>
+			<label for="duración">Duración:</label> <input type="text"
+				th:field="*{duracion}">
+		</p>
+		<p>
+			<label for="ESTADO">Estado(CREADA/CANCELADA/TERMINADA):</label> <input
+				type="text" th:field="*{estado}">
+		</p>
+		<p>
+			<label for="descripcion">Destacado(S/N):</label> <input type="text"
+				th:field="*{destacado}">
+		</p>
+		<p>
+			<label for="aforoMaximo">Aforo Maximo:</label> <input type="text"
+				th:field="*{aforoMaximo}">
+		</p>
+		<p>
+			<label for="aforoMinimo">Aforo Minimo:</label> <input type="text"
+				th:field="*{aforoMinimo}">
+		</p>
+		<p>
+			<label for="precioUnitario">Precio:</label> <input type="text"
+				th:field="*{precioUnitario}">
+		</p>
+
+
+
+
+
+
+		<p>
+			<input type="submit" value="Enviar">
+		</p>
+
+	</form>
+</body>
+</html>
