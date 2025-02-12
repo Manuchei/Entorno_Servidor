@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mis Reservas</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container mt-4">
+		<div th:if="${mensajeExito}" class="alert alert-success" role="alert">
+			<span th:text="${mensajeExito}"></span>
+		</div>
+
+		<div th:if="${mensajeError}" class="alert alert-danger" role="alert">
+			<span th:text="${mensajeError}"></span>
+		</div>
+
+		<h1 class="text-center text-primary mb-4">Mis Reservas Activas</h1>
+
+		<table class="table table-striped table-bordered text-center">
+			<thead class="table-primary">
+				<tr>
+					<th>Evento</th>
+					<th>Fecha</th>
+					<th>Precio</th>
+					<th>Cantidad</th>
+					<th>Opciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="reserva : ${reservas}">
+					<td th:text="${reserva.evento.nombre}"></td>
+					<td
+						th:text="${#dates.format(reserva.evento.fechaInicio, 'yyyy-MM-dd')}"></td>
+					<td th:text="${reserva.precioVenta}"></td>
+					<td>
+						<form
+							th:action="@{/misReservas/modificar/{id}(id=${reserva.idReserva})}"
+							method="post"
+							class="d-flex justify-content-center align-items-center">
+							<input type="number" name="cantidad"
+								th:value="${reserva.cantidad}" class="form-control"
+								style="width: 80px;" min="1" max="10">
+							<button type="submit" class="btn btn-primary btn-sm ms-2">Modificar</button>
+						</form>
+					</td>
+					<td>
+						<form
+							th:action="@{/misReservas/cancelar/{id}(id=${reserva.idReserva})}"
+							method="post">
+							<button type="submit" class="btn btn-danger btn-sm">Cancelar</button>
+						</form>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="text-center mt-4">
+			<a th:href="@{/home}" class="btn btn-secondary btn-lg">Volver</a>
+		</div>
+	</div>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+</body>
+</html>

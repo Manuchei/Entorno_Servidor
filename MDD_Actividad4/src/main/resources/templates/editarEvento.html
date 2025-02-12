@@ -1,0 +1,18 @@
+<form th:action="@{/app/evento/editar/{id}(id=${evento.idEvento})}"
+	method="post">
+	<input type="hidden" name="idEvento" th:value="${evento.idEvento}" />
+
+	<label for="nombre">Nombre:</label> <input type="text" id="nombre"
+		name="nombre" th:value="${evento.nombre}" required /> <label
+		for="descripcion">Descripción:</label> <input type="text"
+		id="descripcion" name="descripcion" th:value="${evento.descripcion}"
+		required /> <label for="idTipo">Tipo:</label> <select id="idTipo"
+		name="idTipo" required>
+		<option value="1"
+			th:selected="${evento.idTipo == null || evento.idTipo == 1}">Conferencia</option>
+		<option value="2" th:selected="${evento.idTipo == 2}">Taller</option>
+		<option value="3" th:selected="${evento.idTipo == 3}">Seminario</option>
+	</select>
+
+	<button type="submit">Guardar</button>
+</form>
