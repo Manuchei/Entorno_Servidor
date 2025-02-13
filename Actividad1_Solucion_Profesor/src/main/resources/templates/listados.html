@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>App Excursionese</title>
+</head>
+<body>
+	<h1>Listado de excursiones</h1>
+	<nav>
+		  <a th:href="@{/excursiones/creados}">CREADOS</a>
+		  <a th:href="@{/excursiones/terminados}">TERMINADOS</a>
+		  <a th:href="@{/excursiones/cancelados}">CANCELADOS</a>
+		  <a th:href="@{/excursiones/destacados}">DESTACADOS</a>
+		  
+	</nav>
+	<div>
+		<h3><a th:href="@{/}">Volver Home</a></h3>
+	</div>
+	<p></p>
+	
+	<h3>Listado de:  <span th:text="${tipoListado}"></span></h3>
+	<div>
+		<table border="2">
+			<tr>
+				<th>Descripcion</th>
+				<th>Origen</th>
+				<th>Destino</th>
+				<th>Fecha</th>
+				<th>Precio</th>
+				<th>Estado</th>
+				<th>Destacado</th>
+				<th>Ver Detalle</th>
+				
+			</tr>
+			<tr th:each="ele: ${excursionesBuscar}">
+				<td th:text="${ele.descripcion}"></td>
+				<td th:text="${ele.origen}"></td>
+				<td th:text="${ele.destino}"></td>
+				<td th:text="${ele.fechaExcursion}"></td>
+				<td th:text="${ele.precioUnitario}"></td>
+				<td th:text="${ele.estado}"></td>
+				<td th:text="${ele.destacado}"></td>
+				<td><a th:href="@{/excursiones/detalle/{id}(id=${ele.idExcursion})}">Ver detalle</a></td>
+				
+			</tr>
+		</table>
+	</div>
+	
+</body>
+</html>

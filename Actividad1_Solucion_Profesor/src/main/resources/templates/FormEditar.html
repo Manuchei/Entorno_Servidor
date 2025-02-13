@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Alta del Producto</title>
+</head>
+<body>
+	<h1>Aplicacion de Excursiones: Alta de Excursion</h1>
+	<form th:action="@{/excursiones/modificar/{id}(id=${excursion.idExcursion})}" 
+		 th:object="${excursion}" method="post">
+
+		<p><input type="text" th:field="*{descripcion}"></p>
+		<p><input type="text" th:field="*{origen}"> 
+		<p><input type="text" th:field="*{destino}"></p>
+		<p><input type="date" th:field="*{fechaExcursion}"> 
+		<p><input type="text" th:field="*{duracion}"></p>
+		<p><input type="text" th:field="*{aforoMaximo}"> 
+		<p><input type="text" th:field="*{minimoAsistentes}"></p>
+		<p><input type="text" th:field="*{precioUnitario}"></p>
+		<p><select th:field=*{estado}>
+			<option value="CREADO">CREADO</option>
+			<option value="CANCELADO">CANCELADO</option>
+			<option value="TERMINADO">TERMINADO</option>
+		</select></p>
+		<p><select th:field=*{destacado}>
+			<option value="S">Destacado Si</option>
+			<option value="N">Destacado No</option>
+		</select></p>
+		
+		<p><input type="submit" value="Enviar"></p>
+		
+	</form>
+</body>
+</html>

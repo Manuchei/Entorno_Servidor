@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Detalle de Producto</title>
+</head>
+<body>
+	<h1>Detalle de un producto</h1>
+	<p th:text="${producto.idProducto}"></p>
+	<p th:text="${producto.descripcion}"></p>
+	<p th:text="${producto.precio}"></p>
+	<p th:text="${producto.stock}"></p>
+	<p th:text="${#dates.format(producto.fechaAlta, 'dd-MM-yyyy')}"></p>
+	
+	<p><a th:href="@{/}">Volver</a></p>
+</body>
+</html>

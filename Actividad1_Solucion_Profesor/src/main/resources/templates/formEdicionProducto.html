@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Alta del Producto</title>
+</head>
+<body>
+	<h1>Aplicacion de Productos: Alta de Producto</h1>
+	<form th:action="@{/productos/editar/{id}(id=${producto.idProducto})}" 
+		 th:object="${producto}" method="post">
+		
+		
+		<p><input type="text" th:field="*{descripcion}"></p>
+		<p><input type="text" th:field="*{precio}"></p>
+		<p><input type="text" th:field="*{stock}"></p>
+		
+		
+		<p><input type="submit" value="Enviar"></p>
+		
+	</form>
+</body>
+</html>

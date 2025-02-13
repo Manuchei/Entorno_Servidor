@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Alta de Excursion</title>
+</head>
+<body>
+	<h1>Aplicacion de Excursiones: Alta de Excursion</h1>
+	<form th:action="@{/excursiones/alta}" method="post">
+
+		<p><input type="text" name="idExcursion" required  placeholder="idExcursion"> 
+		<p><input type="text" name="descripcion"  required  placeholder="descripcion"></p>
+		<p><input type="text" name="origen"  required  placeholder="origen"> 
+		<p><input type="text" name="destino"  required  placeholder="destino"></p>
+		<p><input type="date" name="fechaExcursion"  required  placeholder="yyyy-MM-dd"> 
+		<p><input type="text" name="duracion"  required  placeholder="dias"></p>
+		<p><input type="text" name="aforoMaximo"  required  placeholder="aforo"> 
+		<p><input type="text" name="minimoAsistentes"  required  placeholder="minimo asistentes"></p>
+		<p><input type="text" name="precioUnitario"  required  placeholder="precio"></p>
+		<p><select name="destacado">
+			<option value="S">Destacado Si</option>
+			<option value="N">Destacado No</option>
+		</select></p>
+		
+		<p><input type="submit" value="Enviar"></p>
+		
+	</form>
+</body>
+</html>
